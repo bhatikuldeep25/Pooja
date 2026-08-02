@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A special surprise for the most special person in my life 💖">
+<meta name="theme-color" content="#ff4f81">
+<title>For You Miss Pooja ji 💖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary: #ff4f81;
+  --primary-dark: #e91e63;
+  --secondary: #b45c79;
+  --bg-start: #fa8bb4;
+  --bg-mid: #ffcfdf;
+  --glass: rgba(255, 255, 255, 0.75);
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background: linear-gradient(135deg, var(--bg-start), #fff, var(--bg-mid));
+  overflow-x: hidden;
+  color: #444;
+  font-family: 'Poppins', sans-serif;
+  cursor: default;
+}
+
+/* ===== PRELOADER ===== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #ff4f81, #ff8a65);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s ease, visibility 0.8s;
+}
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.preloader-heart {
+  font-size: 4rem;
+  animation: heartbeat 1.2s ease-in-out infinite;
+}
+.preloader-text {
+  color: white;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  margin-top: 15px;
+  animation: fadeInUp 1s ease;
+}
+.preloader-bar {
+  width: 200px;
+  height: 4px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 2px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.preloader-progress {
+  height: 100%;
+  width: 0%;
+  background: white;
+  border-radius: 2px;
+  animation: loadProgress 2s ease forwards;
+}
+@keyframes loadProgress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+/* ===== FLOATING EMOJIS ===== */
+.floating span {
+  position: fixed;
+  bottom: -60px;
+  font-size: 26px;
+  animation: float 12s linear infinite;
+  opacity: 0.6;
+  z-index: 0;
+  pointer-events: none;
+}
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-120vh) rotate(720deg); opacity: 0; }
+}
+
+/* ===== CUSTOM CURSOR HEARTS ===== */
+.cursor-heart {
+  position: fixed;
+  font-size: 18px;
+  pointer-events: none;
+  z-index: 9999;
+  animation: cursorFade 1s ease forwards;
+}
+@keyframes cursorFade {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-30px) scale(0.5); }
+}
+
+/* ===== SECTIONS ===== */
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  max-width: 900px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  color: var(--primary);
+  margin-bottom: 12px;
+  text-shadow: 2px 2px 4px rgba(255, 79, 129, 0.2);
+}
+
+h2 {
+  font-size: 1.3rem;
+  color: var(--secondary);
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 2;
+  max-width: 700px;
+  margin: auto;
+  color: #555;
+}
+
+/* ===== BUTTONS ===== */
+button {
+  padding: 15px 32px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.main-btn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  box-shadow: 0 10px 25px rgba(255, 79, 129, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+.main-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: 0.5s;
+}
+.main-btn:hover::before {
+  left: 100%;
+}
+.main-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(255, 79, 129, 0.4);
+}
+.main-btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* ===== TYPING EFFECT ===== */
+#typing {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: var(--primary);
+  min-height: 90px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background: var(--primary);
+  animation: blink 0.8s infinite;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ===== COUNTDOWN ===== */
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 25px 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.countdown-item {
+  background: linear-gradient(135deg, rgba(255,79,129,0.1), rgba(255,79,129,0.05));
+  border-radius: 20px;
+  padding: 18px 10px;
+  border: 2px solid rgba(255,79,129,0.15);
+  transition: transform 0.3s;
+}
+.countdown-item:hover {
+  transform: translateY(-5px);
+}
+.countdown-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: block;
+  line-height: 1;
+}
+.countdown-label {
+  font-size: 0.8rem;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+/* ===== LOVE LETTER ===== */
+.letter-content {
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,240,245,0.9));
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px 0;
+  border-left: 4px solid var(--primary);
+  text-align: left;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.letter-content::before {
+  content: '💌';
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  font-size: 2rem;
+  background: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.letter-signature {
+  text-align: right;
+  margin-top: 20px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+/* ===== MEMORY TIMELINE ===== */
+.timeline {
+  position: relative;
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: left;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+  border-radius: 3px;
+}
+.timeline-item {
+  position: relative;
+  margin: 30px 0;
+  width: 50%;
+  padding: 0 30px;
+}
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+.timeline-dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  border-radius: 50%;
+  top: 5px;
+  border: 4px solid white;
+  box-shadow: 0 0 0 3px var(--primary);
+}
+.timeline-item:nth-child(odd) .timeline-dot {
+  right: -10px;
+}
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -10px;
+}
+.timeline-content {
+  background: rgba(255,255,255,0.8);
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.timeline-date {
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+.timeline-text {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* ===== GALLERY ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+.gallery-item {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  aspect-ratio: 3/4;
+}
+.gallery-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  padding: 20px 15px 15px;
+  color: white;
+  font-size: 0.9rem;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+}
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+/* ===== LOVE METER ===== */
+.love-meter {
+  max-width: 400px;
+  margin: 25px auto;
+}
+.meter-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--secondary);
+}
+.meter-bar {
+  height: 20px;
+  background: rgba(255,79,129,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.meter-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary), #ff8a65);
+  border-radius: 10px;
+  transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+.meter-fill::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 30px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4));
+  animation: shimmer 2s infinite;
+}
+@keyframes shimmer {
+  0% { transform: translateX(-30px); }
+  100% { transform: translateX(30px); }
+}
+.meter-hearts {
+  margin-top: 15px;
+  font-size: 1.5rem;
+}
+
+/* ===== PROPOSAL ===== */
+#proposalBox {
+  position: relative;
+  height: 200px;
+  max-width: 500px;
+  width: 100%;
+  margin: 30px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+#yesBtn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 16px 40px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,79,129,0.4); }
+  50% { box-shadow: 0 0 0 15px rgba(255,79,129,0); }
+}
+
+#noBtn {
+  background: #eee;
+  color: #444;
+  position: relative;
+  transition: all 0.2s;
+}
+
+#success {
+  display: none;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-top: 20px;
+  animation: pop 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ===== MUSIC CONTROL ===== */
+.music-control {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1000;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  padding: 12px 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.music-control:hover {
+  transform: scale(1.05);
+}
+.music-control.playing .music-icon {
+  animation: musicBounce 1s ease infinite;
+}
+@keyframes musicBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+.music-wave {
+  display: flex;
+  gap: 3px;
+  align-items: flex-end;
+  height: 20px;
+}
+.music-wave span {
+  width: 3px;
+  background: var(--primary);
+  border-radius: 3px;
+  animation: wave 1s ease infinite;
+}
+.music-wave span:nth-child(1) { height: 8px; animation-delay: 0s; }
+.music-wave span:nth-child(2) { height: 15px; animation-delay: 0.1s; }
+.music-wave span:nth-child(3) { height: 10px; animation-delay: 0.2s; }
+.music-wave span:nth-child(4) { height: 18px; animation-delay: 0.3s; }
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1); }
+}
+
+/* ===== CONFETTI & STICKERS ===== */
+.sticker {
+  position: fixed;
+  font-size: 28px;
+  animation: burst 1.2s ease forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+@keyframes burst {
+  0% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+  100% { opacity: 0; transform: translateY(-150px) scale(1.8) rotate(360deg); }
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  z-index: 9998;
+  pointer-events: none;
+  animation: confettiFall 3s ease forwards;
+}
+@keyframes confettiFall {
+  0% { opacity: 1; transform: translateY(-10vh) rotate(0deg); }
+  100% { opacity: 0; transform: translateY(110vh) rotate(720deg); }
+}
+
+/* ===== FIREWORKS ===== */
+.firework {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  z-index: 9997;
+  pointer-events: none;
+}
+
+/* ===== SCROLL INDICATOR ===== */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* ===== REVEAL ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  #typing { font-size: 1.8rem; min-height: 70px; }
+  .countdown-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .countdown-number { font-size: 1.5rem; }
+  .gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .timeline::before { left: 20px; }
+  .timeline-item { width: 100%; left: 0 !important; padding-left: 50px; padding-right: 0; text-align: left !important; }
+  .timeline-dot { left: 11px !important; right: auto !important; }
+  #proposalBox { flex-direction: column; height: auto; gap: 15px; }
+  #noBtn { position: relative !important; left: auto !important; top: auto !important; }
+  .card { padding: 25px; }
+}
+
+/* ===== SPECIAL EFFECTS ===== */
+.glow-text {
+  text-shadow: 0 0 10px rgba(255,79,129,0.3), 0 0 20px rgba(255,79,129,0.2);
+}
+
+.heart-beat {
+  display: inline-block;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* ===== PHOTO INSTRUCTIONS ===== */
+.photo-hint {
+  background: rgba(255,79,129,0.08);
+  border: 2px dashed rgba(255,79,129,0.3);
+  border-radius: 15px;
+  padding: 15px;
+  margin: 15px 0;
+  font-size: 0.9rem;
+  color: var(--secondary);
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== PRELOADER ===== -->
+<div id="preloader">
+  <div class="preloader-heart">💖</div>
+  <div class="preloader-text">Loading Love...</div>
+  <div class="preloader-bar">
+    <div class="preloader-progress"></div>
+  </div>
+</div>
+
+<!-- ===== FLOATING EMOJIS ===== -->
+<div class="floating">
+  <span style="left:5%;animation-delay:0s;">💖</span>
+  <span style="left:15%;animation-delay:2s;">🌸</span>
+  <span style="left:25%;animation-delay:4s;">💌</span>
+  <span style="left:35%;animation-delay:1s;">😘</span>
+  <span style="left:45%;animation-delay:3s;">✨</span>
+  <span style="left:55%;animation-delay:5s;">💞</span>
+  <span style="left:65%;animation-delay:2.5s;">🥰</span>
+  <span style="left:75%;animation-delay:3.5s;">💍</span>
+  <span style="left:85%;animation-delay:1.5s;">🥹</span>
+  <span style="left:95%;animation-delay:4.5s;">🌹</span>
+  <span style="left:10%;animation-delay:6s;">🫂</span>
+  <span style="left:30%;animation-delay:7s;">🙊</span>
+  <span style="left:50%;animation-delay:8s;">💏</span>
+  <span style="left:70%;animation-delay:6.5s;">🎀</span>
+  <span style="left:90%;animation-delay:7.5s;">🫶</span>
+</div>
+
+<!-- ===== MUSIC CONTROL ===== -->
+<div class="music-control" id="musicControl" onclick="toggleMusic()">
+  <span class="music-icon">🎵</span>
+  <div class="music-wave" id="musicWave">
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <span style="font-size:0.85rem;font-weight:600;color:var(--secondary);">Music</span>
+</div>
+
+<!-- ===== SECTION 1: INTRO ===== -->
+<section>
+  <div class="card visible">
+    <div id="typing"></div>
+    <button class="main-btn" onclick="startJourney()">Open My Heart 💖</button>
+    <div class="scroll-indicator">⬇️</div>
+  </div>
+</section>
+
+<!-- ===== SECTION 2: COUNTDOWN ===== -->
+<section id="countdown">
+  <div class="card">
+    <h1 class="reveal">Since We Met <span class="heart-beat">💞</span></h1>
+    <h2 class="reveal">04 July 2026 • 11:26 AM</h2>
+
+    <div class="countdown-grid reveal">
+      <div class="countdown-item">
+        <span class="countdown-number" id="cd-days">0</span>
+        <div class="countdown-label">Days</div>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number" id="cd-hours">0</span>
+        <div class="countdown-label">Hours</div>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number" id="cd-minutes">0</span>
+        <div class="countdown-label">Minutes</div>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number" id="cd-seconds">0</span>
+        <div class="countdown-label">Seconds</div>
+      </div>
+    </div>
+
+    <button class="main-btn reveal" onclick="goNext('letter')">Read My Letter 💌</button>
+  </div>
+</section>
+
+<!-- ===== SECTION 3: LOVE LETTER ===== -->
+<section id="letter">
+  <div class="card">
+    <h1 class="reveal">My Feelings For You</h1>
+    <h2 class="reveal">A letter from my heart to yours 💖</h2>
+
+    <div class="letter-content reveal">
+      <p>
+        Dear wife ji ❤️🎀💍,<br><br>
+
+        Maine kabhi nahi socha tha ki koi itni jaldi meri life ka important hissa ban jayegi. 🥹<br><br>
+
+        04 July ki subha sirf ek normal chat nahi thi... shayad meri life ke best chapter ki shuruwat thi. 💏📖<br><br>
+
+        Aap mano ya na mano, par main aap se bohot pyar karta hoon. Aur haan, zindagi bhar aapke saath rehna chahta hoon. 🤞<br><br>
+
+        Aur haan, mujhe pata hai main kabhi-kabhi anjaane mein aapka dil dukha deta hoon... par ek din aapko realise ho hi jayega ki main aap se kitna pyar karta hoon aur aap mere liye kya ho. 🥹<br><br>
+
+        Saari feelings is ek letter mein nahi bata sakta...<br><br>
+        <strong style="color:var(--primary);font-size:1.2rem;">I love you. And I miss you a lot every time.</strong><br><br>
+        Will you be mine forever? 💖
+      </p>
+      <div class="letter-signature">Yours Forever 💕</div>
+    </div>
+
+    <button class="main-btn reveal" onclick="goNext('memories')">Our Memories 🥰</button>
+  </div>
+</section>
+
+<!-- ===== SECTION 4: MEMORY TIMELINE ===== -->
+<section id="memories">
+  <div class="card">
+    <h1 class="reveal">Our Beautiful Journey</h1>
+    <h2 class="reveal">Every moment with you is a treasure 💎</h2>
+
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">04 July 2026 🌅</div>
+          <div class="timeline-text">The day we first talked... meri life ka best din! 💬</div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">First Call 📞</div>
+          <div class="timeline-text">Aapki awaaz sun ke dil garden-garden ho gaya tha! 🥰</div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">First "I Love You" 💖</div>
+          <div class="timeline-text">Wo pal jab dil ne zubaan se pehle keh diya... 🥹</div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">Today & Forever 🌹</div>
+          <div class="timeline-text">Ab aur aage... har pal, har saans, sirf aapke saath! 💍</div>
+        </div>
+      </div>
+    </div>
+
+    <button class="main-btn reveal" onclick="goNext('gallery')">Our Photos 📸</button>
+  </div>
+</section>
+
+<!-- ===== SECTION 5: GALLERY ===== -->
+<section id="gallery">
+  <div class="card">
+    <h1 class="reveal">Just Look At You</h1>
+    <h2 class="reveal">Meri duniya ki sabse khoobsurat ladki 🤗🥰💞</h2>
+
+    <div class="photo-hint reveal">
+      💡 <strong>dekho:</strong> Aap kitni sundar ho koi bhi pighal jaye aap ko dekh kar🫠...
+    </div>
+
+    <div class="gallery">
+      <div class="gallery-item reveal">
+        <img src="/images/08.jpeg" alt="My Love" onerror="this.src='https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=400&h=500&fit=crop'">
+        <div class="gallery-overlay">My World 🌍</div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="/images/04.jpeg" alt="My Love" onerror="this.src='https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=400&h=500&fit=crop'">
+        <div class="gallery-overlay">My Happiness 😊</div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="/images/09.jpeg" alt="My Love" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop'">
+        <div class="gallery-overlay">My Everything 💖</div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="/images/05.jpeg" alt="My Love" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=500&fit=crop'">
+        <div class="gallery-overlay">My Queen 👑</div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="/images/01.jpeg" alt="My Love" onerror="this.src='https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=500&fit=crop'">
+        <div class="gallery-overlay">My Angel 😇</div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="/images/02.jpeg" alt="My Love" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=500&fit=crop'">
+        <div class="gallery-overlay">Forever Mine 💍</div>
+      </div>
+    </div>
+
+    <button class="main-btn reveal" onclick="goNext('love-meter')">Next 💖</button>
+  </div>
+</section>
+
+<!-- ===== SECTION 6: LOVE METER ===== -->
+<section id="love-meter">
+  <div class="card">
+    <h1 class="reveal">My Love For You</h1>
+    <h2 class="reveal">Kitna pyar karta hoon... numbers mein bataun? 💕</h2>
+
+    <div class="love-meter reveal">
+      <div class="meter-label">
+        <span>Love Meter</span>
+        <span id="meter-percent">0%</span>
+      </div>
+      <div class="meter-bar">
+        <div class="meter-fill" id="meterFill"></div>
+      </div>
+      <div class="meter-hearts" id="meterHearts"></div>
+    </div>
+
+    <p class="reveal" style="margin-top:20px;font-style:italic;color:var(--secondary);">
+      "100% bhi kam hai... kyunki mera pyar infinity tak jaata hai!" ♾️💖
+    </p>
+
+    <button class="main-btn reveal" onclick="goNext('proposal')">Final Question 💍</button>
+  </div>
+</section>
+
+<!-- ===== SECTION 7: PROPOSAL ===== -->
+<section id="proposal">
+  <div class="card">
+    <h1 class="reveal glow-text">Baccha... 💖</h1>
+    <h2 class="reveal" style="font-size:1.5rem;">Will You Be Mine Forever?</h2>
+
+    <div id="proposalBox" class="reveal">
+      <button id="yesBtn" onclick="sayYes()">Yes 💖</button>
+      <button id="noBtn" onmouseover="moveNo()" ontouchstart="moveNo()">No 🙈</button>
+    </div>
+
+    <div id="success">
+      Yayyyy! 💖🎉<br>
+      Now You Are Officially Mine! 😘<br>
+      <span style="font-size:1.5rem;">I Love You Forever! 💍</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MUSIC ===== -->
+<audio id="music" loop>
+  <!-- Option 1: Romantic Piano (Unsplash Music - free) -->
+  <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-piano-10691.mp3" type="audio/mpeg">
+  <!-- Option 2: Fallback -->
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+// ===== PRELOADER =====
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('preloader').classList.add('hidden');
+  }, 2200);
+});
+
+// ===== TYPING EFFECT =====
+const textLines = [
+  "Hey Baby... 💖",
+  "I made something special for you...",
+  "Please watch till the end 😘",
+  "I love you! 💕"
+];
+let line = 0, char = 0;
+const typingEl = document.getElementById("typing");
+
+function type() {
+  if (line < textLines.length) {
+    if (char < textLines[line].length) {
+      typingEl.innerHTML = typingEl.innerHTML.replace('<span class="typing-cursor"></span>', '') + 
+                           textLines[line].charAt(char) + '<span class="typing-cursor"></span>';
+      char++;
+      setTimeout(type, 80);
+    } else {
+      typingEl.innerHTML = typingEl.innerHTML.replace('<span class="typing-cursor"></span>', '') + '<br><span class="typing-cursor"></span>';
+      line++; char = 0;
+      setTimeout(type, 600);
+    }
+  } else {
+    typingEl.innerHTML = typingEl.innerHTML.replace('<span class="typing-cursor"></span>', '');
+  }
+}
+setTimeout(type, 2500);
+
+// ===== MUSIC =====
+let musicPlaying = false;
+const music = document.getElementById("music");
+const musicControl = document.getElementById("musicControl");
+const musicWave = document.getElementById("musicWave");
+
+function toggleMusic() {
+  if (musicPlaying) {
+    music.pause();
+    musicControl.classList.remove('playing');
+    musicWave.style.opacity = '0.3';
+  } else {
+    music.play().catch(e => console.log('Audio play failed:', e));
+    musicControl.classList.add('playing');
+    musicWave.style.opacity = '1';
+  }
+  musicPlaying = !musicPlaying;
+}
+
+function startJourney() {
+  toggleMusic();
+  goNext('countdown');
+}
+
+// ===== SCROLL TO SECTION =====
+function goNext(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+// ===== COUNTDOWN =====
+function updateTimer() {
+  const start = new Date("2026-07-04T11:26:00");
+  const now = new Date();
+  const diff = now - start;
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hrs = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const mins = Math.floor((diff / (1000 * 60)) % 60);
+  const secs = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("cd-days").textContent = days;
+  document.getElementById("cd-hours").textContent = hrs;
+  document.getElementById("cd-minutes").textContent = mins;
+  document.getElementById("cd-seconds").textContent = secs;
+}
+setInterval(updateTimer, 1000);
+updateTimer();
+
+// ===== NO BUTTON RUN =====
+let noCount = 0;
+const noBtn = document.getElementById("noBtn");
+const proposalBox = document.getElementById("proposalBox");
+
+function moveNo() {
+  noCount++;
+  const boxRect = proposalBox.getBoundingClientRect();
+  const maxX = boxRect.width - noBtn.offsetWidth - 20;
+  const maxY = boxRect.height - noBtn.offsetHeight - 20;
+
+  noBtn.style.position = 'absolute';
+  noBtn.style.left = (Math.random() * maxX) + "px";
+  noBtn.style.top = (Math.random() * maxY) + "px";
+
+  if (noCount === 2) noBtn.innerText = "Baccha No 😘";
+  if (noCount === 4) noBtn.innerText = "Think Again 😏";
+  if (noCount === 6) noBtn.innerText = "Please? 🥺";
+  if (noCount === 8) noBtn.innerText = "I love you! 💖";
+  if (noCount >= 10) noBtn.innerText = "Bas karo maan jao! 😂";
+
+  // Create small hearts when moving
+  createSticker(noBtn.getBoundingClientRect().left + noBtn.offsetWidth/2, 
+                noBtn.getBoundingClientRect().top, '💨');
+}
+
+// ===== YES BUTTON =====
+function sayYes() {
+  document.getElementById("success").style.display = "block";
+  document.getElementById("yesBtn").style.display = "none";
+  document.getElementById("noBtn").style.display = "none";
+
+  // Burst of stickers
+  for (let i = 0; i < 50; i++) {
+    setTimeout(() => {
+      createSticker(
+        Math.random() * window.innerWidth,
+        Math.random() * window.innerHeight,
+        ["💖", "🌸", "💌", "😘", "✨", "💞", "🎀", "🫶", "🌹", "💍", "🥰", "🎉"][Math.floor(Math.random() * 12)]
+      );
+    }, i * 50);
+  }
+
+  // Confetti
+  for (let i = 0; i < 100; i++) {
+    setTimeout(() => createConfetti(), i * 30);
+  }
+
+  // Fireworks
+  for (let i = 0; i < 5; i++) {
+    setTimeout(() => createFirework(), i * 400);
+  }
+
+  // Change music to happier tone if possible
+  music.playbackRate = 1.1;
+}
+
+function createSticker(x, y, emoji) {
+  const s = document.createElement("div");
+  s.className = "sticker";
+  s.innerHTML = emoji;
+  s.style.left = x + "px";
+  s.style.top = y + "px";
+  s.style.fontSize = (20 + Math.random() * 20) + "px";
+  document.body.appendChild(s);
+  setTimeout(() => s.remove(), 1200);
+}
+
+function createConfetti() {
+  const c = document.createElement("div");
+  c.className = "confetti";
+  c.style.left = Math.random() * 100 + "vw";
+  c.style.top = "-10px";
+  c.style.background = ['#ff4f81', '#ff8a65', '#ffd54f', '#81c784', '#64b5f6', '#ba68c8'][Math.floor(Math.random() * 6)];
+  c.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+  c.style.width = (6 + Math.random() * 8) + "px";
+  c.style.height = (6 + Math.random() * 8) + "px";
+  c.style.animationDuration = (2 + Math.random() * 2) + "s";
+  document.body.appendChild(c);
+  setTimeout(() => c.remove(), 4000);
+}
+
+function createFirework() {
+  const x = Math.random() * window.innerWidth;
+  const y = Math.random() * window.innerHeight * 0.5;
+  const colors = ['#ff4f81', '#ffd54f', '#81c784', '#64b5f6', '#ff8a65'];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement("div");
+    p.className = "firework";
+    p.style.left = x + "px";
+    p.style.top = y + "px";
+    p.style.background = color;
+    const angle = (Math.PI * 2 * i) / 20;
+    const velocity = 50 + Math.random() * 100;
+    const tx = Math.cos(angle) * velocity;
+    const ty = Math.sin(angle) * velocity;
+    p.style.transition = "all 1s ease-out";
+    document.body.appendChild(p);
+
+    setTimeout(() => {
+      p.style.transform = `translate(${tx}px, ${ty}px)`;
+      p.style.opacity = "0";
+    }, 10);
+    setTimeout(() => p.remove(), 1000);
+  }
+}
+
+// ===== CURSOR HEARTS =====
+let lastHeart = 0;
+document.addEventListener('mousemove', (e) => {
+  const now = Date.now();
+  if (now - lastHeart > 100) {
+    const heart = document.createElement('div');
+    heart.className = 'cursor-heart';
+    heart.innerHTML = '💖';
+    heart.style.left = e.clientX + 'px';
+    heart.style.top = e.clientY + 'px';
+    heart.style.fontSize = (12 + Math.random() * 10) + 'px';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 1000);
+    lastHeart = now;
+  }
+});
+
+// ===== SCROLL REVEAL =====
+const observerOptions = {
+  threshold: 0.15,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+
+      // Trigger love meter when visible
+      if (entry.target.querySelector('#meterFill')) {
+        setTimeout(() => {
+          document.getElementById('meterFill').style.width = '100%';
+          let percent = 0;
+          const interval = setInterval(() => {
+            percent++;
+            document.getElementById('meter-percent').textContent = percent + '%';
+            document.getElementById('meterHearts').textContent = '💖'.repeat(Math.floor(percent / 10));
+            if (percent >= 100) clearInterval(interval);
+          }, 20);
+        }, 500);
+      }
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal, .card').forEach(el => observer.observe(el));
+
+// ===== PARALLAX FLOATING =====
+window.addEventListener('scroll', () => {
+  const scrolled = window.pageYOffset;
+  document.querySelectorAll('.floating span').forEach((span, i) => {
+    const speed = 0.5 + (i % 3) * 0.2;
+    span.style.transform = `translateY(${scrolled * speed}px)`;
+  });
+});
+
+// ===== HIDE SCROLL INDICATOR ON SCROLL =====
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) {
+    document.querySelector('.scroll-indicator').style.opacity = '0';
+  }
+});
+</script>
+
+</body>
+</html>
